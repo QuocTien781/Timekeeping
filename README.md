@@ -1,7 +1,7 @@
 # Timekeeping
+*** Navigate to the 'images-demo' folder to view the website demo!
 
 ## Desciptions
-
 Timekeeping management software for security guards. checkin and checkout can be done in the app. Can determine checkin location and checkout location. Using AI to face recognition.
 
 ## Technologies
