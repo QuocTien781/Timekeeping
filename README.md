@@ -9,7 +9,7 @@ Timekeeping management software for security guards. checkin and checkout can be
     - HTML, CSS, JS
     - Bootstrap
     - Axios, Ajax, Jquery,...
-Backend:
+- Backend:
     - C#
     - Using  Entity Framework
     - Sql server
