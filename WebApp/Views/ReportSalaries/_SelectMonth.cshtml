@@ -1,0 +1,116 @@
+﻿@{
+    var username = ViewData["username"];
+    var token = ViewData["token"];
+}
+<style>
+    .flex-container {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .list-group-item {
+        flex: 0 0 calc(100% / 6);
+        border-top: 1px solid #dfdfdf;
+        padding-top:10px;
+        font-weight: 600;
+        position: relative;
+    }
+    .list-group-item + .list-group-item {
+            border-top-width:1px;
+     }
+    .list-group-item:hover {
+            background-color: #aaa;
+            cursor: pointer
+     }
+     .list-group-item:first-child {
+           border-top: 1px solid #dfdfdf
+     }
+     .line {
+            border-bottom: 1px solid red;
+            border-width: 10px;
+    }
+</style>
+<div class="row">
+    <div class="flex-container">
+        @for (int i = 1; i <= 12; i++)
+        {
+            string thangValue = DateTime.Now.ToString("yyyy") + "-" + i.ToString("D2");
+            bool isCurrentMonth = i == DateTime.Now.Month;
+            bool isFutureMonth = i > DateTime.Now.Month;
+
+            <div class="list-group-item line @(isCurrentMonth ? "bg-red" : "")" @if (isFutureMonth) { <text> onclick="CantUpload()" </text>  } else { <text> onclick="triggerFileInput(@i)" </text> }>
+                Tháng @i
+                <input style="display:none" type="text" id="thang_@i" name="thang" value="@thangValue" />
+                <input type="file" id="importSalaries_@i" style="display:none" accept=".xlsx" onchange="openFile(event,@i)" />
+            </div>
+        }
+    </div>
+
+</div>
+<div class="row mt-5">
+    <b class="ml-2"> File đã chọn <i class="fa-solid fa-file-excel" style="color: #159d0b;"></i> :</b>
+    <span id="fileName" class="ml-3"></span>
+    <input style="display:none" id="date" class="ml-3" value="" />
+    <input style="display:none" id="Username" class="ml-3" value="@username" />
+    <input style="display:none" id="token" class="ml-3" value="@token" />
+</div>
+
+<script>
+
+    function CantUpload() {
+        notify("Không thể tải bản lương lớn hơn tháng hiện tại")
+    }
+    var myModalDemoSalaries = {
+        $modal: $('#myModalDemoSalaries'),
+        $myModalContent: $("#myModalContentDemoSalaries"),
+        $myModalTitle: $("#myModalTitleDemoSalaries")
+    }
+    function triggerFileInput(index) {
+        var fileInput = document.getElementById('importSalaries_' + index);
+        fileInput.click();
+    }
+    var selectedFile;
+    function openFile(event, i) {
+        var thang = $('#thang_' + i).val();
+        var fileInput = event.target;
+        selectedFile = event.target.files[0];
+        console.log(selectedFile)
+        var fileNameSpan = document.getElementById('fileName');
+        var date = $('#date');
+        fileNameSpan.textContent = fileInput.files[0].name;
+        date.val(`${thang}`);
+    }
+    function importData() {
+            if (selectedFile) {
+            var Username = $('#Username').val();
+            var date = $('#date').val();
+            var token = $('#token').val();
+            var formData = new FormData();
+             formData.append('file', selectedFile);
+             formData.append('Username', Username);
+             formData.append('date', date);
+                $.ajax({
+                url: 'https://api.hoanglongsecurity.info/api/ReportSalaries/postReportSalaries',
+                type: 'POST',
+                data: formData,
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                    },
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    // Xử lý kết quả trả về từ API
+                    console.log(response);
+                    loadModal("Tháng", '@Url.Action("_DemoImportExcel")', myModalDemoSalaries, { Username: Username})
+                },
+                    error: function (response) {
+                        notify(response.responseJSON.message)
+                }
+                });
+        } else {
+            notify("Không có file nào được chọn.");
+        }
+    }
+
+</script>

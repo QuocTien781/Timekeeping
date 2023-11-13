@@ -1,0 +1,83 @@
+﻿@{
+    var data = ViewBag.data as ToolsApp.EntityFramework.User_Check_Patrol;
+    var token = ViewData["token"];
+}
+
+<style>
+    .avatar {
+        width: 300px;
+        height: 500px;
+        cursor:pointer;
+    }
+
+    .avatar-col {
+        justify-content: space-around
+    }
+
+    .fadeinBtn {
+        border: none;
+        padding: 5px 16px;
+    }
+    .responsive {
+        width: 100%;
+        display: none;
+    }
+    .enlarge {
+        margin-top:104px;
+        transform: scale(1.8); /* Phóng to ảnh lên 120% kích thước ban đầu */
+        transition: transform 0.3s; /* Thời gian phóng to */
+    }
+    #fullSizeImage {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+</style>
+<input value="@data.Id" id="Id" class="displayN" name="Id" />
+<input value="@data.Username_Check" id="username" class="displayN" name="Id" />
+<input value="@data.imageName" id="nameImageIn" class="displayN" name="nameImageIn" />
+<input value="@token" id="token" class="displayN" name="token" />
+<div class="row avatar-col" id="image" style="margin-bottom:30px">
+    <img id="imageCheckIn" alt="Ảnh checkIn" src="" class="img-responsive img-thumbnail avatar" />
+</div>
+<div class="row avatar-col" style="margin-bottom:5px">
+    <button type="button" id="fadeinBtn" class="btn btn-primary" >
+        Ảnh checkin
+    </button>
+</div>
+ 
+<script>
+    function loadImageCheckPatrol() {
+        var username = $("#username").val();
+        var token = $("#token").val();
+        var name_Image_In = $("#nameImageIn").val();
+        ActionFunc(
+            'https://api.hoanglongsecurity.info/api/Authenticate/GetImage?nameImage=' + name_Image_In + "&username=" + username,
+            'GET',
+            {},
+            token,
+            function (respon, reject) {
+                if (respon) {
+                    $("#imageCheckIn").attr("src", respon.data);
+                }
+                else {
+                    notify("error", reject)
+                }
+                $(".divLoading").removeClass("loading");
+            }
+        )
+    }
+
+    $('#image').click(function () {
+        $('#imageCheckIn').toggleClass('enlarge'); // Thêm hoặc xóa class 'enlarge'
+    });
+    loadImageCheckPatrol();
+</script>
+

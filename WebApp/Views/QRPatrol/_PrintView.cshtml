@@ -1,0 +1,20 @@
+﻿
+@{
+    var data = ViewBag.data as ToolsApp.EntityFramework.Qr_Patrol;
+}
+<form id="_Print">
+    <div class="row" style=" width:100%">
+        <table id="TableSS" class="table-bordered " style="border:none" width="100%">
+           @for(int i =0; i<= 29;i++)
+            {
+            <img src="@data.path_Qr" style="width:200px" />
+            }
+        </table>
+    </div>
+    <br />
+    <br />
+    <div class="row" style=" width:100%">
+
+    </div>
+</form>
+

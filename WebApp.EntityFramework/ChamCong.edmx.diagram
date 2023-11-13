@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5799572fb17a4f82bd9003c86d246ae9" Name="Diagram1">
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.AspNetRoleClaim" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.AspNetRole" Width="1.5" PointX="0.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.AspNetUserClaim" Width="1.5" PointX="8.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.AspNetUserLogin" Width="1.5" PointX="8.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.AspNetUser" Width="1.5" PointX="6" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.AspNetUserToken" Width="1.5" PointX="8.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.AttendanceFace" Width="1.5" PointX="16.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.Conversation" Width="1.5" PointX="9" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.ConversationList" Width="1.5" PointX="11.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.Department" Width="1.5" PointX="3.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.Errol" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.Help" Width="1.5" PointX="2.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.Job" Width="1.5" PointX="9.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.JobDetail" Width="1.5" PointX="12" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.Menu" Width="1.5" PointX="11.25" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.Messenger" Width="1.5" PointX="11.25" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.notification" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.Page" Width="1.5" PointX="9" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.PleaseTakeLeave" Width="1.5" PointX="11.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.ProfileUser" Width="1.5" PointX="2.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.Qr_Patrol" Width="1.5" PointX="12" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.ReportSalary" Width="1.5" PointX="4.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.Resignation" Width="1.5" PointX="6.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.sysdiagram" Width="1.5" PointX="6.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.User_Check_Patrol" Width="1.5" PointX="14.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.User_Page" Width="1.5" PointX="11.25" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.UserJob" Width="1.5" PointX="14.25" PointY="15.625" IsExpanded="true" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_AspNetRoleClaims_AspNetRoles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_AspNetUserClaims_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_AspNetUserLogins_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_AspNetUsers_Department_DepartmentId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_AspNetUserTokens_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_ConversationList_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_PleaseTakeLeave_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_User_Page_AspNetUsers_userId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_UserJob_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_AttendanceFace_UserJob_UserJobId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_ConversationList_Conversation_ConversationId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_Messenger_Conversation_ConversationId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_Job_Department_DepartmentId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_JobDetail_Job_JobId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_Qr_Patrol_Job_JobId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_UserJob_JobDetail_JobDetailId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_Menu_Menu_MenuId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_Menu_Page_PageId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_User_Page_Page_PageId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_PleaseTakeLeave_UserJob_UserJobId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.FK_User_Check_Patrol_Qr_Patrol_Qr_PatrolId" ManuallyRouted="false" />
+        <AssociationConnector Association="ChamCong_TeamDevModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ChamCong_TeamDevModel.ReportSalariesTmp" Width="1.5" PointX="14.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\WebApp",
+    "\\WebApp\\UserFiles\\Template",
+    "\\WebApp\\Views",
+    "\\WebApp\\Views\\QRPatrol",
+    "\\WebApp\\Views\\UserCheckPatrol",
+    "\\WebApp\\Views\\UserJob",
+    "\\WebApp\\Views\\UserManagement",
+    "\\WebApp\\Views\\UserProfile"
+  ],
+  "PreviewInSolutionExplorer": false
+}
