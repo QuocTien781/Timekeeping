@@ -2,7 +2,7 @@
 *** Navigate to the 'images-demo' folder to view the website demo!
 
 ## Desciptions
-Timekeeping management software for security guards. checkin and checkout can be done in the app. Can determine checkin location and checkout location. Using AI to face recognition.
+Timekeeping software designed for security service companies, using 2D technology to authenticate faces and timekeeping anywhere. Users can record their working hours based on tasks assigned by the webmaster. The software can track work days, work hours, timesheets and salaries. Send and receive notifications, support....
 
 ## Technologies
 - Frontend:
