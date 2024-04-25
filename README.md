@@ -14,3 +14,4 @@ Timekeeping management software for security guards. checkin and checkout can be
     - Using  Entity Framework
     - Sql server
     - Firebase
+    - Minio
